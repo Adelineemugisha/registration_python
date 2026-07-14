@@ -1,0 +1,10 @@
+def create_table():
+    with get_db_connection() as connection:
+        connection.execute('''CREATE TABLE IF NOT EXISTS courses (
+                           id INTEGER PRIMARY KEY AUTOINCREMENT,
+                           title TEXT NOT NULL,
+                           code TEXT NOT NULL,
+                           credits INTEGER NOT NULL,
+                           description TEXT NOT NULL)''')
+        connection.commit()
+        
